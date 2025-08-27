@@ -53,7 +53,7 @@ def run_service(name, service_info):
     path = service_info.get("path")
     if not path:
         logging.error(f"{name}のパスがconfig.jsonで設定されていません。")
-        return
+        return "Failure"
 
     logging.info(f"=== {name} 実行開始 ===")
     if slack_config.get("notify_on_start"):
@@ -63,7 +63,7 @@ def run_service(name, service_info):
     if os.path.exists(main_py):
         try:
             result = subprocess.run(
-                ["python", main_py],
+                ["python", "main.py"],
                 check=True,
                 capture_output=True,
                 text=True,
@@ -72,12 +72,15 @@ def run_service(name, service_info):
             logging.info(f"{name} 実行完了\n{result.stdout}")
             if slack_config.get("notify_on_finish"):
                 notify_slack(f"【完了】{name} の実行が完了しました。")
+            return "Success"
         except subprocess.CalledProcessError as e:
             logging.error(f"{name} 実行中にエラー発生: {e}\nSTDOUT: {e.stdout}\nSTDERR: {e.stderr}")
             notify_slack(f"【エラー】{name} 実行中にエラーが発生しました。詳細はログを確認してください。")
+            return "Failure"
     else:
         logging.warning(f"{name} の main.py が見つかりません: {main_py}")
         notify_slack(f"【警告】{name} の main.py が見つかりませんでした。")
+        return "Warning"
 
 # ==========================
 # HTMLダッシュボード作成
@@ -126,16 +129,8 @@ if __name__ == "__main__":
     execution_results = {}
 
     for name, info in services.items():
-        # This is a simplified logic. Real implementation should get status from run_service
-        main_py = os.path.join(info.get("path", ""), "main.py")
-        if os.path.exists(main_py):
-             # In a real run, we'd capture success/failure from subprocess.
-             # For this simulation, we'll assume success if file exists.
-            execution_results[name] = "Success"
-        else:
-            execution_results[name] = "Warning"
-
-        run_service(name, info)
+        status = run_service(name, info)
+        execution_results[name] = status
 
     generate_dashboard(execution_results)
 

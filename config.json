@@ -9,6 +9,11 @@
       "path": "services/project_b",
       "config_file": "config.py",
       "description": "Project-Progress-Manager のコードを格納"
+    },
+    "project_c": {
+      "path": "services/project_c",
+      "config_file": "config.py",
+      "description": "This is a demo project C added from a template."
     }
   },
   "slack": {

@@ -9,3 +9,41 @@
 2025-08-26 16:43:43,024 [INFO] HTMLダッシュボードを生成しました: dashboard/index.html
 2025-08-26 16:43:43,024 [INFO] === 全サービス実行完了 ===
 2025-08-26 16:43:43,024 [INFO] Slack通知（スキップ）: 【完了】全サービスの実行が完了しました。
+2025-08-27 06:05:39,495 [INFO] === project_a 実行開始 ===
+2025-08-27 06:05:39,495 [INFO] Slack通知（スキップ）: 【開始】project_a の実行を開始しました。
+2025-08-27 06:05:39,496 [WARNING] project_a の main.py が見つかりません: services/project_a/main.py
+2025-08-27 06:05:39,496 [INFO] Slack通知（スキップ）: 【警告】project_a の main.py が見つかりませんでした。
+2025-08-27 06:05:39,496 [INFO] === project_b 実行開始 ===
+2025-08-27 06:05:39,496 [INFO] Slack通知（スキップ）: 【開始】project_b の実行を開始しました。
+2025-08-27 06:05:39,496 [WARNING] project_b の main.py が見つかりません: services/project_b/main.py
+2025-08-27 06:05:39,497 [INFO] Slack通知（スキップ）: 【警告】project_b の main.py が見つかりませんでした。
+2025-08-27 06:05:39,497 [INFO] === project_c 実行開始 ===
+2025-08-27 06:05:39,497 [INFO] Slack通知（スキップ）: 【開始】project_c の実行を開始しました。
+2025-08-27 06:05:39,518 [ERROR] project_c 実行中にエラー発生: Command '['python', 'services/project_c/main.py']' returned non-zero exit status 2.
+STDOUT:
+STDERR: python: can't open file '/app/services/project_c/services/project_c/main.py': [Errno 2] No such file or directory
+
+2025-08-27 06:05:39,519 [INFO] Slack通知（スキップ）: 【エラー】project_c 実行中にエラーが発生しました。詳細はログを確認してください。
+2025-08-27 06:05:39,519 [INFO] HTMLダッシュボードを生成しました: dashboard/index.html
+2025-08-27 06:05:39,519 [INFO] === 全サービス実行完了 ===
+2025-08-27 06:05:39,519 [INFO] Slack通知（スキップ）: 【完了】全サービスの実行が完了しました。
+2025-08-27 06:06:14,685 [INFO] === project_a 実行開始 ===
+2025-08-27 06:06:14,685 [INFO] Slack通知（スキップ）: 【開始】project_a の実行を開始しました。
+2025-08-27 06:06:14,686 [WARNING] project_a の main.py が見つかりません: services/project_a/main.py
+2025-08-27 06:06:14,686 [INFO] Slack通知（スキップ）: 【警告】project_a の main.py が見つかりませんでした。
+2025-08-27 06:06:14,686 [INFO] === project_b 実行開始 ===
+2025-08-27 06:06:14,686 [INFO] Slack通知（スキップ）: 【開始】project_b の実行を開始しました。
+2025-08-27 06:06:14,686 [WARNING] project_b の main.py が見つかりません: services/project_b/main.py
+2025-08-27 06:06:14,686 [INFO] Slack通知（スキップ）: 【警告】project_b の main.py が見つかりませんでした。
+2025-08-27 06:06:14,686 [INFO] === project_c 実行開始 ===
+2025-08-27 06:06:14,686 [INFO] Slack通知（スキップ）: 【開始】project_c の実行を開始しました。
+2025-08-27 06:06:14,710 [INFO] project_c 実行完了
+---
+Executing project_template: main.py
+This is a sample project. Replace this with your own logic.
+---
+
+2025-08-27 06:06:14,710 [INFO] Slack通知（スキップ）: 【完了】project_c の実行が完了しました。
+2025-08-27 06:06:14,710 [INFO] HTMLダッシュボードを生成しました: dashboard/index.html
+2025-08-27 06:06:14,710 [INFO] === 全サービス実行完了 ===
+2025-08-27 06:06:14,710 [INFO] Slack通知（スキップ）: 【完了】全サービスの実行が完了しました。
