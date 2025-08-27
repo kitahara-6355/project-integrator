@@ -19,20 +19,27 @@ jobs:
         with:
           python-version: "3.10"
 
-      # 3. 依存パッケージをインストール
-      - name: Install dependencies
+      # 3. 共通の依存パッケージをインストール
+      - name: Install common dependencies
         run: |
           python -m pip install --upgrade pip
           pip install requests
-          if [ -f services/project_a/requirements.txt ]; then pip install -r services/project_a/requirements.txt; fi
-          if [ -f services/project_b/requirements.txt ]; then pip install -r services/project_b/requirements.txt; fi
 
-      # 4. 統合スクリプトを実行
-      - name: Run all projects
+      # 4. サービスごとの依存ライブラリをインストール
+      - name: Install service-specific dependencies
         run: |
-          python run_all.py
+          for service_dir in services/*; do
+            if [ -d "$service_dir" ] && [ -f "$service_dir/requirements.txt" ]; then
+              echo "Installing dependencies for $service_dir"
+              pip install -r "$service_dir/requirements.txt"
+            fi
+          done
 
-      # 5. ダッシュボードをアーティファクトとして保存
+      # 5. 統合スクリプトを実行
+      - name: Run all projects
+        run: python run_all.py
+
+      # 6. ダッシュボードをアーティファクトとして保存
       - name: Upload Dashboard
         uses: actions/upload-artifact@v3
         with:
