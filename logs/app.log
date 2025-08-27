@@ -1,0 +1,11 @@
+2025-08-26 16:43:43,023 [INFO] === project_a 実行開始 ===
+2025-08-26 16:43:43,023 [INFO] Slack通知（スキップ）: 【開始】project_a の実行を開始しました。
+2025-08-26 16:43:43,023 [WARNING] project_a の main.py が見つかりません: services/project_a/main.py
+2025-08-26 16:43:43,023 [INFO] Slack通知（スキップ）: 【警告】project_a の main.py が見つかりませんでした。
+2025-08-26 16:43:43,023 [INFO] === project_b 実行開始 ===
+2025-08-26 16:43:43,023 [INFO] Slack通知（スキップ）: 【開始】project_b の実行を開始しました。
+2025-08-26 16:43:43,024 [WARNING] project_b の main.py が見つかりません: services/project_b/main.py
+2025-08-26 16:43:43,024 [INFO] Slack通知（スキップ）: 【警告】project_b の main.py が見つかりませんでした。
+2025-08-26 16:43:43,024 [INFO] HTMLダッシュボードを生成しました: dashboard/index.html
+2025-08-26 16:43:43,024 [INFO] === 全サービス実行完了 ===
+2025-08-26 16:43:43,024 [INFO] Slack通知（スキップ）: 【完了】全サービスの実行が完了しました。

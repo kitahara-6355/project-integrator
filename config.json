@@ -1,0 +1,28 @@
+{
+  "services": {
+    "project_a": {
+      "path": "services/project_a",
+      "config_file": "config.py",
+      "description": "Project-Automate のコードを格納"
+    },
+    "project_b": {
+      "path": "services/project_b",
+      "config_file": "config.py",
+      "description": "Project-Progress-Manager のコードを格納"
+    }
+  },
+  "slack": {
+    "webhook_url": "https://hooks.slack.com/services/xxxx/yyyy/zzzz",
+    "channel": "#general",
+    "notify_on_start": true,
+    "notify_on_finish": true
+  },
+  "dashboard": {
+    "output_path": "dashboard/index.html"
+  },
+  "logging": {
+    "log_dir": "logs",
+    "log_file": "app.log",
+    "level": "INFO"
+  }
+}
